@@ -1,0 +1,51 @@
+{
+    "title": "IP2Proxy Proxy Detection",
+    "description": "IP2Proxy allows instant detection of anonymous proxy, VPN and TOR exit nodes by IP address. Visit https://www.ip2location.com/ip2proxy-web-service for further information.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/ip2proxy.com/1.0/openapi.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.ip2proxy.com",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_": {
+            "main": "./lib/actions/get_.js",
+            "title": "Check if an IP address is proxy",
+            "description": "Check if an IP address is proxy",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

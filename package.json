@@ -1,0 +1,15 @@
+{
+    "name": "ip-2-proxy-com-connector",
+    "version": "1.0.0",
+    "description": "IP2Proxy allows instant detection of anonymous proxy, VPN and TOR exit nodes by IP address. Visit https://www.ip2location.com/ip2proxy-web-service for further information.",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}
